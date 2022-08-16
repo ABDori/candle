@@ -37,11 +37,13 @@
       grid-template-rows: repeat(auto, 1fr);
       margin-top:3rem;
 }
-.hidden{
+.hidden *{
       transform: translateX(-100vw);
-      transition: 0.3s 0.2s ease-in;
-}
 
+}
+.grid-item{
+      transition: 0.4s 2s ease-in;
+}
 
 .grid-item-3{
       display: grid;

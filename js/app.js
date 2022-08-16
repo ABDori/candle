@@ -14,31 +14,34 @@ document.addEventListener('DOMContentLoaded',() => {
 
       /* запускаю считывание попадания в экран */
 
-      const gridItem = document.querySelectorAll('.hidden');
+      const hiddenBlock = document.querySelector('.grid-item');
+      const sections = document.querySelectorAll('section');
+
+
+
+
       const options = {
             root: null,
-            threshold: 0.85,
+            threshold:0.3,
+            rootMargin: "0px"
       };
 
 
       const observer = new IntersectionObserver(function (entries,observer) {
             entries.forEach(entry => {
-
-                  // console.log('entered')
-                  if (!entry.isIntersecting) {
-                        entry.target.classList.remove('hidden');
-                        return;
-                  }
-                  entry.target.classList.remove('hidden');
+                if (entry.isIntersecting) {
+                      entry.target.classList.remove('hidden');
+                      console.log(entry);
+                      return;}
             });
       },options);
 
-      gridItem.forEach(gridItem => {
-            observer.observe(gridItem);
+      sections.forEach(hiddenBlock => {
+            observer.observe(hiddenBlock);
       });
 
 
-     //
+     //     
      //  /* внутренний процент скролла */
      //  const wrapper = document.querySelector('.wrapper');
      //  const rocket = document.querySelector('#rocket');
@@ -57,7 +60,76 @@ document.addEventListener('DOMContentLoaded',() => {
      //
      // /*  document.querySelector('#rocket').style.top='30' && '%'; */
 
-      
+
+    // let modalParameter= document.querySelectorAll()
+    // let priceModified = 350;
+    // let modalColor=0;
+    // let modalPreps=0;
+    //
+    //
+    // switch (modalColor){
+    //     case 'monochrome':
+    //         priceModified=parceInt(priceModified * 1,3);
+    //         break;
+    //
+    //
+    //     case 'several colors':
+    //         priceModified=parceInt(priceModified * 1,5);
+    //         break;
+    // }
 
 
 });
+
+
+let price = 350;
+let modalColor=function { =>
+    if (modal__clr==="blank") {
+        console.log("blank")
+    }
+
+    else if (modal__clr==="monochrome"){
+        console.log("monochrome")
+    }
+
+    else (modal__clr==="several colors"){
+        console.log("several colors")
+    }};
+
+
+
+
+    ;
+    let modalPreps;
+
+
+    switch (modalColor){
+        case 'monochrome'{
+            price=parceInt(price*1,3);
+            break;
+        };
+
+        case 'several colors'{
+            price=parceInt(price*1,5);
+            break;
+        };
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
